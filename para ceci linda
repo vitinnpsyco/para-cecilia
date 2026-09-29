@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#090509">
+
+    <title>Para Cecília de Toni Loregian ❤️</title>
+
+    <style>
+
+        /* ==============================
+           CONFIGURAÇÕES
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 80px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(170, 20, 45, .20),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    145deg,
+                    #050305,
+                    #12060a,
+                    #050305
+                );
+
+            color: #fff5f7;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        /* ==============================
+           NEVE
+        ============================== */
+
+        .neve {
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: 10;
+        }
+
+        .floco {
+            position: absolute;
+
+            top: -30px;
+
+            width: var(--tamanho);
+            height: var(--tamanho);
+
+            border-radius: 50%;
+
+            background: white;
+
+            opacity: var(--opacidade);
+
+            filter: blur(var(--blur));
+
+            animation:
+                cair var(--duracao)
+                linear infinite;
+
+            animation-delay:
+                var(--atraso);
+        }
+
+        @keyframes cair {
+
+            0% {
+                transform:
+                    translate3d(
+                        0,
+                        -40px,
+                        0
+                    )
+                    rotate(0deg);
+            }
+
+            25% {
+                transform:
+                    translate3d(
+                        30px,
+                        25vh,
+                        0
+                    )
+                    rotate(90deg);
+            }
+
+            50% {
+                transform:
+                    translate3d(
+                        -25px,
+                        50vh,
+                        0
+                    )
+                    rotate(180deg);
+            }
+
+            75% {
+                transform:
+                    translate3d(
+                        35px,
+                        75vh,
+                        0
+                    )
+                    rotate(270deg);
+            }
+
+            100% {
+                transform:
+                    translate3d(
+                        -10px,
+                        110vh,
+                        0
+                    )
+                    rotate(360deg);
+            }
+        }
+
+
+        /* ==============================
+           BRILHO AO FUNDO
+        ============================== */
+
+        .brilho {
+            position: fixed;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: #e63950;
+
+            filter: blur(130px);
+
+            opacity: .12;
+
+            pointer-events: none;
+
+            animation:
+                moverBrilho 8s
+                ease-in-out infinite
+                alternate;
+        }
+
+        @keyframes moverBrilho {
+
+            from {
+                transform:
+                    translate(
+                        -100px,
+                        -100px
+                    );
+            }
+
+            to {
+                transform:
+                    translate(
+                        100px,
+                        120px
+                    );
+            }
+        }
+
+
+        /* ==============================
+           CARTÃO
+        ============================== */
+
+        .carta {
+
+            width: min(
+                680px,
+                100%
+            );
+
+            padding:
+                clamp(30px, 7vw, 65px);
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.055),
+                    rgba(255,255,255,.018)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 30px 100px
+                rgba(0,0,0,.55);
+
+            backdrop-filter:
+                blur(15px);
+
+            animation:
+                entrada 1.2s
+                cubic-bezier(.16,1,.3,1)
+                forwards;
+
+            z-index: 20;
+        }
+
+        @keyframes entrada {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(50px)
+                    scale(.94);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        /* ==============================
+           CABEÇALHO
+        ============================== */
+
+        .pequeno {
+
+            color: #ff8fa3;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            text-align: center;
+
+            margin-bottom: 20px;
+        }
+
+        h1 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    38px,
+                    9vw,
+                    64px
+                );
+
+            line-height: 1.05;
+
+            font-weight: 400;
+
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+        h1 span {
+            color: #e63950;
+        }
+
+
+        /* ==============================
+           LINHA
+        ============================== */
+
+        .linha {
+
+            width: 70px;
+
+            height: 1px;
+
+            margin:
+                0 auto 35px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #e63950,
+                    transparent
+                );
+        }
+
+
+        /* ==============================
+           TEXTO
+        ============================== */
+
+        .texto {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    17px,
+                    4vw,
+                    20px
+                );
+
+            line-height: 1.9;
+
+            color: #eadde0;
+
+        }
+
+        .texto p {
+            margin-bottom: 23px;
+        }
+
+
+        /* ==============================
+           DESTAQUE
+        ============================== */
+
+        .destaque {
+
+            color: #ff8fa3;
+
+            font-size: 22px;
+
+            text-align: center;
+
+            margin:
+                35px 0;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* ==============================
+           ASSINATURA
+        ============================== */
+
+        .assinatura {
+
+            margin-top: 40px;
+
+            text-align: right;
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 22px;
+
+            font-style: italic;
+
+            color: #ff8fa3;
+        }
+
+        .autor {
+
+            margin-top: 8px;
+
+            color: #8f7d83;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 11px;
+
+            font-style: normal;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* ==============================
+           CORAÇÃO
+        ============================== */
+
+        .coracao {
+
+            display: block;
+
+            text-align: center;
+
+            font-size: 34px;
+
+            color: #e63950;
+
+            margin-top: 35px;
+
+            animation:
+                pulsar 2s
+                ease-in-out infinite;
+        }
+
+        @keyframes pulsar {
+
+            0%,
+            100% {
+                transform:
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    scale(1.15);
+            }
+        }
+
+
+        /* ==============================
+           RODAPÉ
+        ============================== */
+
+        .rodape {
+
+            margin-top: 35px;
+
+            text-align: center;
+
+            color: #75666b;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* ==============================
+           CELULAR
+        ============================== */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding:
+                    40px 15px;
+            }
+
+            .carta {
+                padding:
+                    35px 23px;
+
+                border-radius:
+                    24px;
+            }
+
+            h1 {
+                margin-bottom:
+                    28px;
+            }
+
+            .texto {
+                font-size: 17px;
+
+                line-height: 1.85;
+            }
+
+            .assinatura {
+                text-align:
+                    center;
+            }
+
+        }
+
+
+        /* ==============================
+           ACESSIBILIDADE
+        ============================== */
+
+        @media (
+            prefers-reduced-motion: reduce
+        ) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation:
+                    none !important;
+
+                scroll-behavior:
+                    auto !important;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         BRILHO
+    ========================================== -->
+
+    <div class="brilho"></div>
+
+
+    <!-- =========================================
+         NEVE
+    ========================================== -->
+
+    <div
+        class="neve"
+        id="neve"
+    ></div>
+
+
+    <!-- =========================================
+         CARTA
+    ========================================== -->
+
+    <main class="carta">
+
+        <div class="pequeno">
+            uma declaração para você
+        </div>
+
+
+        <h1>
+            Para
+            <span>Cecília.</span>
+        </h1>
+
+
+        <div class="linha"></div>
+
+
+        <div class="texto">
+
+            <p>
+                Cecília, eu não sei exatamente como
+                colocar em palavras tudo o que eu sinto,
+                mas eu queria tentar.
+            </p>
+
+
+            <p>
+                Você se tornou uma pessoa muito especial
+                para mim. Gosto muito de conversar com
+                você, dos momentos que a gente passa
+                juntos e até das pequenas coisas que
+                talvez você nem perceba.
+            </p>
+
+
+            <p>
+                Às vezes eu penso em você do nada e
+                começo a sorrir sozinho. Acho que isso
+                já diz bastante sobre o quanto você
+                significa para mim.
+            </p>
+
+
+            <p>
+                Eu gosto do seu jeito, da sua presença
+                e da forma como você consegue fazer
+                um momento simples ficar especial.
+            </p>
+
+
+            <p>
+                Eu não estou escrevendo isso esperando
+                alguma coisa de você. Só queria que você
+                soubesse o que eu sinto.
+            </p>
+
+
+            <p>
+                Às vezes a gente guarda sentimentos
+                por medo de falar, e eu não queria
+                guardar o que sinto por você.
+            </p>
+
+
+            <div class="destaque">
+
+                Você é uma pessoa muito especial
+                para mim, Cecília, e eu gosto muito
+                de ter você na minha vida. ❤️
+
+            </div>
+
+
+            <p>
+                Talvez eu não consiga falar tudo isso
+                pessoalmente do jeito que eu consigo
+                escrever aqui, mas pelo menos agora
+                você sabe.
+            </p>
+
+
+            <p>
+                Eu só queria que você soubesse que
+                existe alguém aqui que gosta muito
+                de você e que valoriza muito a sua
+                presença.
+            </p>
+
+        </div>
+
+
+        <div class="assinatura">
+
+            Com carinho,
+
+            <div class="autor">
+                Juan
+            </div>
+
+        </div>
+
+
+        <span class="coracao">
+            ♥
+        </span>
+
+
+        <div class="rodape">
+
+            Feito especialmente para
+            Cecília de Toni Loregian.
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         JAVASCRIPT DA NEVE
+    ========================================== -->
+
+    <script>
+
+        const neve =
+            document.getElementById("neve");
+
+
+        /*
+         * Cria vários flocos de tamanhos,
+         * posições e velocidades diferentes.
+         */
+
+        const quantidade = 55;
+
+
+        for (
+            let i = 0;
+            i < quantidade;
+            i++
+        ) {
+
+            const floco =
+                document.createElement("span");
+
+
+            floco.className =
+                "floco";
+
+
+            const tamanho =
+                Math.random() * 6 + 2;
+
+
+            const duracao =
+                Math.random() * 8 + 7;
+
+
+            const atraso =
+                Math.random() * -15;
+
+
+            const opacidade =
+                Math.random() * .65 + .25;
+
+
+            const blur =
+                Math.random() * 2;
+
+
+            floco.style.left =
+                Math.random() * 100 + "%";
+
+
+            floco.style.setProperty(
+                "--tamanho",
+                tamanho + "px"
+            );
+
+
+            floco.style.setProperty(
+                "--duracao",
+                duracao + "s"
+            );
+
+
+            floco.style.setProperty(
+                "--atraso",
+                atraso + "s"
+            );
+
+
+            floco.style.setProperty(
+                "--opacidade",
+                opacidade
+            );
+
+
+            floco.style.setProperty(
+                "--blur",
+                blur + "px"
+            );
+
+
+            neve.appendChild(floco);
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
